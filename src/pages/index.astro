@@ -1,15 +1,48 @@
 ---
+import MainLayout from "@layouts/MainLayout.astro";
+import Avatar from "@components/avatar.astro";
+import FeaturedCardsLayout from "@layouts/FeaturedCardsLayout.astro";
+import FeaturedCard from "@components/FeaturedCard.astro";
+import LinksLayout from "@layouts/LinksLayout.astro";
+import Link from "@components/Link.astro";
+import Social from "@components/Social.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<MainLayout title="Astro Linktree Clone">
+    <Avatar />
+    <FeaturedCardsLayout>
+        <FeaturedCard 
+            featuredCardIcon="logos:google-gmail"
+            featuredCardTitle="Contact Me!"
+            featuredCardLink="mailto:quentin.houguet@gmail.com"
+        />
+        <FeaturedCard 
+            featuredCardIcon="logos:linkedin-icon"
+            featuredCardTitle="I'm on LinkedIn"
+            featuredCardLink="https://www.linkedin.com/in/quentin-houguet-281a97275/"
+        />
+    </FeaturedCardsLayout>
+    <LinksLayout>
+        <Link
+            linkTitle='🐣 Twitter'
+            linkDescription='Follow me on Twitter.com!' 
+            linkUrl='https://twitter.com/@quentonar'
+        />
+        <Link
+        linkTitle='👾 Github'
+        linkDescription='Come check my works!' 
+        linkUrl='https://github.com/qhouguet?tab=repositories'
+    />
+        <Link
+        linkTitle='🧑‍🦲 Resume'
+        linkDescription='Check my online resume (WIP)' 
+        linkUrl='#'        
+    />
+        <Link
+        linkTitle='📖 Course'
+        linkDescription='Follow the same path as me' 
+        linkUrl='https://openclassrooms.com/fr/paths/717-developpeur-web'
+    />         
+    </LinksLayout>
+    <Social />
+</MainLayout>
